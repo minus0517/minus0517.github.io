@@ -6,7 +6,7 @@ function submitForm(event) {
 	const result = document.getElementById('result');
 	const result2 = document.getElementById('result2');
 	result.innerHTML = 'Global Loot: ' + (money * 0.88).toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace(',', ' ');
-	result2.innerHTML = 'Your Loot: ' + (money * 0.88 * (share / 100)).toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace(',', ' ');
+	result2.innerHTML = 'Your Loot: ' + (money * 0.88 * (share / 100)).toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace(',', ' ')
 
 	event.preventDefault();
 }
