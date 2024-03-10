@@ -14,10 +14,77 @@
 	</head>
 	<body>
 		<h1>Hello and welcome</h1>
+		<h3>
+			type amount of cash/weed/coke/gold/artwork and value of main loot.
+			<br />If u have 770 000$ type only 770. and for 1 400 000$ type 1400
+		</h3>
+		<form id="formId">
+			<br /><br /><br />
+			<p style="color: white">Cash:</p>
+			<input
+				type="number"
+				id="cash"
+				value="0"
+				placeholder="Cash"
+				min="0"
+				max="6"
+			/>
+			<p style="color: white">Weed:</p>
+			<input
+				type="number"
+				id="weed"
+				value="0"
+				placeholder="Weed"
+				min="0"
+				max="6"
+			/>
+			<p style="color: white">Coke:</p>
+			<input
+				type="number"
+				id="coke"
+				value="0"
+				placeholder="Coke"
+				min="0"
+				max="6"
+			/>
+			<p style="color: white">Gold:</p>
+			<input
+				type="number"
+				id="gold"
+				value="0"
+				placeholder="Gold"
+				min="0"
+				max="6"
+			/>
+			<p style="color: white">Artwork:</p>
+			<input
+				type="number"
+				id="artwork"
+				value="0"
+				placeholder="Artwork"
+				min="0"
+				max="6"
+			/>
+			<p style="color: white">Main Loot value:</p>
+			<input
+				type="number"
+				id="mainloot"
+				value="0"
+				placeholder="Mainloot"
+				min="0"
+				max="5000"
+			/>
+			<br /><br />
 
+			<input type="submit" value="Start" />
+		</form>
+		<h2 id="lootmin"></h2>
+		<h2 id="lootmax"></h2>
 		<br /><br />
 		<a href="index.html">
-			<img src="return.png" alt="return png" />
+			<img src="buttons/return.png" alt="return png" />
 		</a>
+
+		<script src="./js/scriptLoot.js"></script>
 	</body>
 </html>
