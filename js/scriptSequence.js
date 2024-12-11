@@ -4,18 +4,16 @@ function submitForm(event) {
     event.preventDefault();
 
     // Pobieranie wartości z pól formularza
+    const Subtrahend = parseFloat(document.getElementById('Subtrahend').value) || 0;
     const ValueX = parseFloat(document.getElementById('ValueX').value) || 0;
     const ValueY = parseFloat(document.getElementById('ValueY').value) || 0;
 
-    // Stała wartość
-    const CONSTANT = 32;
-
     // Obliczanie wartości a1
-    const a1Value = ValueX + (CONSTANT * ValueY);
+    const a1Value = ValueX + (Subtrahend * ValueY);
 
     // Wyświetlanie wyniku
     const a1 = document.getElementById('a1');
-    a1.innerHTML = 'a1 = ' + a1Value;
+    a1.innerHTML = 'Wynik:  ' + a1Value;
 }
 
 // Wywoływanie funkcji podczas przesyłania formularza
