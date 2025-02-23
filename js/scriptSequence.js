@@ -9,7 +9,7 @@ function submitForm(event) {
     const ValueY = parseFloat(document.getElementById('ValueY').value) || 0;
 
     // Obliczanie wartości a1
-    const a1Value = ValueX + (Subtrahend * ValueY);
+    const a1Value = ValueX + (Subtrahend * (ValueY-1));
 
     // Wyświetlanie wyniku
     const a1 = document.getElementById('a1');
