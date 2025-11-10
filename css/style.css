@@ -23,10 +23,6 @@ a {
 	text-decoration: none;
 }
 
-a:visited{
-	color: purple;
-}
-
 a:hover, a:focus{
 	color: hsl(215, 80%, 60%, 0.7);
 	text-decoration: underline;
