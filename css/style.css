@@ -17,3 +17,21 @@ h2 {
 	font-size: 40px;
 	margin-left: 2vh;
 }
+
+a {
+	color: hsl(215, 80%, 60%);
+	text-decoration: none;
+}
+
+a:visited{
+	color: purple;
+}
+
+a:hover, a:focus{
+	color: hsl(215, 80%, 60%, 0.7);
+	text-decoration: underline;
+}
+
+a:active{
+	color: red;
+}
