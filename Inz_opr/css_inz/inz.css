@@ -1,0 +1,68 @@
+body {margin:0;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.main {
+  padding: 120px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+
+.bg-img {
+    background-image: url("background.png");
+    min-height: 380px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    position: relative;
+    image-rendering: pixelated;
+}
+
+    /* Główny kontener z wieloma elementami */
+    .container {
+      display: flex;            /* włącza flexbox */
+      flex-wrap: wrap;          /* elementy zawijają się, jeśli nie mieszczą się w wierszu */
+      justify-content: space-between; /* równe odstępy między elementami */
+      align-items: stretch;     /* elementy rozciągają się na wysokość kontenera */
+      width: 80%;               /* szerokość kontenera */
+      height: 25%;              /* wysokość kontenera */
+      border: 2px solid #333;   /* obramowanie kontenera */
+      padding: 20px;            /* wewnętrzny odstęp */
+      box-sizing: border-box;   /* uwzględnia padding i border w szerokości/ wysokości */
+    }
+
+    /* Pojedynczy element w kontenerze */
+    .item {
+      /*background-color: lightcoral; /* kolor tła elementu */
+      background-image: url(k1.jpg);
+      background-repeat: no-repeat;
+      mix-blend-mode: multiply;
+      padding: 20px;                /* wewnętrzny odstęp */
+      margin: 10px;                 /* odstęp między elementami */
+      flex-grow: 1;                 /* elementy mogą rosnąć, aby wypełnić wolną przestrzeń */
+      flex-basis: 30%;              /* początkowa szerokość elementu (30% kontenera) */
+      text-align: center;           /* wyśrodkowanie tekstu w elemencie */
+      border-radius: 5px;           /* zaokrąglone rogi */
+      box-sizing: border-box;       /* padding i border wliczone w rozmiar elementu */
+    }
