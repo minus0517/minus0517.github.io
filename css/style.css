@@ -29,5 +29,5 @@ a:hover, a:focus{
 }
 
 a:active{
-	color: red;
+	color: rgb(255, 0, 0);
 }

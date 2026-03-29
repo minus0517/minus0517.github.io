@@ -30,10 +30,10 @@ body {margin:0;}
 }
 
 .bg-img {
-    background-image: url("background.png");
+    background-image: url("background2.jpg");
     min-height: 380px;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover; 
     position: relative;
     image-rendering: pixelated;
@@ -45,8 +45,8 @@ body {margin:0;}
       flex-wrap: wrap;          /* elementy zawijają się, jeśli nie mieszczą się w wierszu */
       justify-content: space-between; /* równe odstępy między elementami */
       align-items: stretch;     /* elementy rozciągają się na wysokość kontenera */
-      width: 80%;               /* szerokość kontenera */
-      height: 25%;              /* wysokość kontenera */
+      min-width: 15vh;          /* minimalna szerokość kontenera*/
+      min-height: 20%;              /* wysokość kontenera */
       border: 2px solid #333;   /* obramowanie kontenera */
       padding: 20px;            /* wewnętrzny odstęp */
       box-sizing: border-box;   /* uwzględnia padding i border w szerokości/ wysokości */
@@ -54,15 +54,10 @@ body {margin:0;}
 
     /* Pojedynczy element w kontenerze */
     .item {
-      /*background-color: lightcoral; /* kolor tła elementu */
-      background-image: url(k1.jpg);
-      background-repeat: no-repeat;
-      mix-blend-mode: multiply;
       padding: 20px;                /* wewnętrzny odstęp */
       margin: 10px;                 /* odstęp między elementami */
       flex-grow: 1;                 /* elementy mogą rosnąć, aby wypełnić wolną przestrzeń */
       flex-basis: 30%;              /* początkowa szerokość elementu (30% kontenera) */
       text-align: center;           /* wyśrodkowanie tekstu w elemencie */
-      border-radius: 5px;           /* zaokrąglone rogi */
       box-sizing: border-box;       /* padding i border wliczone w rozmiar elementu */
     }
