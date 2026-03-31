@@ -2,8 +2,12 @@ body {margin:0;}
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
+/*  background-color: #333; */
+  background-image: linear-gradient(to right, #05ff58, #1100ff, #ff0080);
+  border-bottom-left-radius: 500px;
+  border-bottom-right-radius: 500px;
   position: fixed;
+  box-shadow: 10px 0 50px #008cff;
   top: 0;
   width: 100%;
 }
@@ -29,14 +33,16 @@ body {margin:0;}
   height: 1500px; /* Used in this example to enable scrolling */
 }
 
-.bg-img {
+.bg-img { /*
     background-image: url("background2.jpg");
     min-height: 380px;
     background-position: center;
     background-repeat: repeat;
-    background-size: cover; 
+    background-size: cover;
+    image-rendering: pixelated; */
+    padding-top: 1rem;
     position: relative;
-    image-rendering: pixelated;
+    background-color: #000000;
 }
 
     /* Główny kontener z wieloma elementami */
@@ -47,9 +53,10 @@ body {margin:0;}
       align-items: stretch;     /* elementy rozciągają się na wysokość kontenera */
       min-width: 15vh;          /* minimalna szerokość kontenera*/
       min-height: 20%;              /* wysokość kontenera */
-      border: 2px solid #333;   /* obramowanie kontenera */
       padding: 20px;            /* wewnętrzny odstęp */
       box-sizing: border-box;   /* uwzględnia padding i border w szerokości/ wysokości */
+      box-shadow: 10px 0 50px #008cff;
+      border-radius: 5rem;
     }
 
     /* Pojedynczy element w kontenerze */
