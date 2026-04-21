@@ -4,8 +4,8 @@ body {margin:0;}
   overflow: hidden;
 /*  background-color: #333; */
   background-image: linear-gradient(to right, #05ff58, #1100ff, #ff0080);
-  border-bottom-left-radius: 500px;
-  border-bottom-right-radius: 500px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   position: fixed;
   box-shadow: 10px 0 50px #008cff;
   top: 0;
@@ -23,7 +23,7 @@ body {margin:0;}
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  padding-right: 20px;
+  padding-right: 30px;
   padding-left: 20px;
 }
 
@@ -125,17 +125,13 @@ body {margin:0;}
     }
 
     .search {
-      position: absolute;
       width: max-content;
       display: flex;
       align-items: center;
       padding: 14px;
       border-radius: 28px;
       background-color: rgba(246, 246, 246, 0.6);
-      width: 600px;
       transition: box-shadow 0.25s;
-      left: 30%;
-      right: 50%;
     }
     
     .search:focus-within {
