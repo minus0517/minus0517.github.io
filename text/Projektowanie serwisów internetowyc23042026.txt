@@ -1,6 +1,0 @@
-Projektowanie serwisów internetowych
-SQL injection, sys rejestracji
-
-usuniecie danych sql: DROP TABLE;
-łączenie dwóćh tablic: UNION SELECT <tab>;
-
