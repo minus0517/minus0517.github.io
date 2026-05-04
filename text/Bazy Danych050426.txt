@@ -1,0 +1,18 @@
+Bazy Danych
+
+p ^ p = p
+p ^ false = false
+p ^ true = p
+p ^ (-p) = false
+p ^ (p v q) = p
+
+p v p = p
+p v false = p
+p v true = true
+p v (-p) = true
+p v (p ^ q) = p
+
+negacja (-)
+OR (^)
+AND (v)
+
