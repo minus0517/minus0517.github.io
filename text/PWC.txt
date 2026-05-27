@@ -1,0 +1,587 @@
+#include <stdio.h>
+
+int main(void)
+{
+// zad 1
+// a)
+printf("Dominik Kraszewski\n");
+// b)
+printf("Dominik \nKraszewski\n");
+// c)
+printf("Dominik ");
+printf("Kraszewski\n");
+return 0;
+}
+
+-------
+
+#include <stdio.h>
+
+int main(void)
+{
+int wiek;
+printf("Podaj: ");
+scanf("%d", &wiek);
+printf("twój wiek (%d) w dniach wynosi: %d\n", wiek, wiek*365);
+return 0;
+}
+
+-----------
+#include <stdio.h>
+
+int main(void)
+{
+int liczba;
+printf("Podaj liczbe całkowitą: ");
+scanf("%d", &liczba);
+
+for(int i=0; i<=liczba; i++)
+  printf("%10d %10d %10d\n", i, i+i, i*i);
+return 0;
+}
+
+-----------
+#include <stdio.h>
+// zad 4
+int main(void)
+{
+  int liczba;
+  printf("Podaj: ");
+  scanf("%d", &liczba);
+// a)
+  if(liczba < 0) printf("%d\n", liczba*-1);
+  if(liczba >= 0) printf("%d\n", liczba);
+// b)
+  if(liczba < 0)
+    printf("%d\n", liczba*-1);
+  else
+    printf("%d\n", liczba);
+return 0;
+}
+
+-----------
+#include <stdio.h>
+
+int main(void)
+{
+  int a, b;
+  printf("Podaj a i b: ");
+  scanf("%d%d", &a, &b);
+  if (a  != 0)
+    printf("Wynik: %d\n", -b/a);
+  else
+    if(b == 0)
+      printf("Nieskończenie wiele miejsc zerowych\n");
+    else
+      printf("Brak miejsc zerowych\n");
+
+return 0;
+}
+
+-----------
+#include <stdio.h>
+
+int main(void)
+{
+  int liczba;
+  printf("Podaj liczbę: ");
+  scanf("%d", &liczba);
+  if (liczba%2==0)
+    printf("liczba parzysta\n");
+  else
+    printf("liczba nieparzysta\n");
+return 0;
+}
+
+-----------
+#include <stdio.h>
+
+int main(void)
+{
+  int a, b, c;
+  printf("Podaj trzy liczby: ");
+  scanf("%d%d%d", &a, &b, &c);
+  if(a > b && a > c)
+    printf("max: a=%d\n", a);
+  else
+    if(b > a && b > c)
+      printf("max: b=%d\n", b);
+    else
+      printf("max: c=%d\n", c);
+return 0;
+}
+
+-----------
+#include <stdio.h>
+
+int main(void)
+{
+double a, b, c;
+printf("Podaj trzy liczby: ");
+scanf("%lf %lf %lf", &a, &b, &c);
+//if (((b**b)-4*a*c)==)
+
+printf("test: %lf %lf %lf\n", a, b, c);
+
+return 0;
+}
+
+-----------
+#include <stdio.h>
+double max(double, double);
+
+int main(void) {
+double wynik, x, y;
+printf("Wpisz dwie liczby po spacji: ");
+scanf("%lf %lf", &x, &y);
+wynik = max(x,y);
+printf("max z liczb (%5.2lf,%5.2lf) to: %5.2lf\n", x, y, wynik);
+return 0;
+}
+
+double max(double x, double y){
+  if (x > y)
+    return x;
+  else
+    return y;
+}
+
+-----------
+#include <stdio.h>
+void rzad_zn(char, int, int);
+
+int main(void){
+char ch;
+int i,j;
+printf("Podaj znak oraz rozmiar i j po spacji: ");
+scanf("%c %d %d", &ch, &i, &j);
+rzad_zn(ch,i,j);
+return 0;
+}
+
+void rzad_zn(char ch, int i, int j){
+  for(int licznik = 1; licznik <=i; licznik++)
+  {
+    for(int licznik = 1; licznik <=j; licznik++) printf("%c", ch);
+     printf("\n");
+  }
+}
+
+-----------
+#include <stdio.h>
+int trojkatna(int);
+
+int main(void){
+int a;
+printf("Podaj liczbę: ");
+scanf("%d", &a);
+printf("wynik: %d\n", trojkatna(a));
+return 0;
+}
+
+int trojkatna(int a){
+  int wynik = 0;
+  for(int licznik = 1; licznik <= a; licznik++)
+    wynik+=licznik;
+  return wynik;
+}
+
+-----------
+#include <stdio.h>
+int odwroc_cyfry(int);
+/*
+liczba%10
+liczba /10;
+*/
+int main(void){
+int a;
+printf("Podaj liczbę: ");
+scanf("%d", &a);
+odwroc_cyfry(a);
+return 0;
+}
+
+int odwroc_cyfry(int a){
+  while(a > 0){
+    printf("%d",a%10);
+    a=a/10;}
+  printf("\n");
+}
+
+-----------
+#include <stdio.h>
+
+void print(int, const int[]);
+void z1a(int, int[]);
+void z1b(int, int[]);
+void z1c(int, int[]);
+void z1d(int, int[]);
+int z2a(int, int[]);
+
+int main(void){
+  int tab[] = {1, 2, 5, 12, -3};
+  print(5,tab);
+  z1d(5,tab);
+  print(5,tab);
+  z1a(5, tab);
+  print(5, tab);
+  z1b(5,tab);
+  print(5, tab);
+  z1c(5, tab);
+  print(5, tab);
+  //z2a(5, tab);
+}
+
+void print(int n, const int tab[]){
+  for(int i=0; i<n; i++) printf("%d \t", tab[i]);
+  printf("\n");
+}
+
+void z1a(int n, int tab[]){
+  for(int i=0; i<n; i++) tab[i] = 0;
+}
+
+void z1b(int n, int tab[]){
+  for(int i=0; i<n; i++) tab[i] = i;
+}
+
+void z1c(int n, int tab[]){
+  for(int i=0; i<n; i++) tab[i] = (tab[i] * 2);
+}
+
+void z1d(int n, int tab[]){
+  for(int i=0; i<n; i++)
+    if(tab[i] < 0)
+      tab[i] = (tab[i] * -1);
+}
+/*
+int z2a(int n, int tab[]){
+  int suma2a = 0;
+  for(int i=0; i<n; i++) suma2a += tab[i];
+}
+*/
+
+-----------
+#include <stdio.h>
+
+void dekompozycja(double,int*,double*);
+
+int main(void){
+
+  int czesc_calkowita;
+  double x,czesc_ulamkowa;
+  printf("Podaj liczbę: ");
+  scanf("%lf", &x);
+  dekompozycja(x, &czesc_calkowita, &czesc_ulamkowa);
+  printf("%d %lf\n", czesc_calkowita, czesc_ulamkowa);
+  return 0;
+
+}
+
+void dekompozycja(double x, int *czesc_calkowita, double *czesc_ulamkowa){
+  *czesc_calkowita = (int)x;
+  *czesc_ulamkowa = x-*czesc_calkowita;
+}
+
+-----------
+#include <stdio.h>
+int mniejszaliczba(int*, int*);
+
+int main(void){
+ int x, y;
+ printf("Podaj liczby: ");
+ scanf("%d %d", &x, &y);
+ printf("%d\n",mniejszaliczba(&x, &y));
+ return 0;
+}
+
+int mniejszaliczba(int *x, int *y){
+  if(*x < *y) return *x;
+  else return *y;
+}
+
+-----------
+#include <stdio.h>
+int *mniejszaliczba(int*, int*);
+
+int main(void){
+ int x, y;
+ printf("Podaj liczby: ");
+ scanf("%d %d", &x, &y);
+ printf("%d - %p\n",*mniejszaliczba(&x, &y), mniejszaliczba(&x, &y));
+ return 0;
+}
+
+int *mniejszaliczba(int *x, int *y){
+  if(*x < *y) return x;
+  else return y;
+}
+
+-----------
+#include <stdio.h>
+void max_min(int[], int, int*, int*);
+
+int main(void){
+  int tab[10] = {5, 4, 9, 15, -56, -102, -1, 60, 105, 0};
+  int min, max;
+  max_min(tab, 10, &max, &min);
+  printf("max: %d min: %d\n", max, min);
+}
+
+void max_min(int tab[], int n, int *max, int *min){
+   *min = tab[0];
+   *max = tab[0];
+   for(int i=1; i<n; i++){
+     if(tab[i] < *min) *min = tab[i];
+     if(tab[i] > *max) *max = tab[i];
+   }
+}
+
+-----------
+#include <stdio.h>
+
+int wskaz(int, int, int, int);
+
+int main(void){
+  int a = 5;
+  int b = 3;
+  int *wa = &a;
+  int *wb = &b;
+  wskaz(&wa, &wb, &a, &b);
+/*
+    if(*wa < *wb){
+    wa = &b;
+    wb = &a;
+  }
+*/
+  printf("%d %d\n", *wa, *wb);
+}
+
+int wskaz(int wa, int wb, int a, int b){
+  if(*wa < *wb){
+    wa = &b;
+    wb = &a;
+  }
+}
+
+-----------
+#include <stdio.h>
+#include <stdlib.h>
+
+size_t strlen(const char s[]);
+size_t  i=0;
+char* strcpy(char t[],const char s[]);
+char* strncpy(char t[], const char s[], size_t n);
+// main
+int main(void){
+  char t[] = "abecadlo";
+  char s[] = "aqq";
+  printf("%s liczba znaków: %ld\n",s,strlen(s));
+  printf("%s = %s\n", s, strcpy(t, s));
+  //printf("przed zmianą: %s  oraz %s\n", t, s);
+  //printf("%s = %s\n", s, strncpy(t, s, 12));
+}
+
+// a)
+char *strcpy(char t[], const char s[]){
+  int i=0;
+  while(s[i]) { t[i] = s[i]; i++;}
+  t[i] = '\0';
+  return t;
+}
+
+// b)
+size_t strlen(const char *s){
+  while(s[i]) i++;
+  return i;
+  }
+
+// c)
+
+char *strncpy(char t[], const char s[], size_t n){
+while(i<n) {
+  if(s[i]){
+  t[i] = s[i];
+  i++;
+  }
+ t[i] = '\0';
+ return t;
+}
+
+}
+
+-----------
+#include <stdio.h>
+#include <ctype.h>
+
+void pierwsze_slowo(char*);
+
+int main(void){
+  char napis[100];
+  pierwsze_slowo(napis);
+  printf("%s", napis);
+  return 0;
+}
+
+void pierwsze_slowo(char *napis){
+  int c;
+  while((c=getchar()) != EOF && isspace(c));
+  while(c != EOF && !isspace(c))
+  {
+    *(napis++) = (char)c;
+    c = getchar();
+  }
+  *napis = '\0';
+}
+
+-----------
+#include <stdio.h>
+#include <string.h>
+
+int main(int argc, char **argv){
+  printf("%d oraz %s\n", argc, argv[1]);
+  for(int i=argc-1; i>0; i--){
+     printf("%s ", argv[i]);
+  }
+  printf("\n");
+  return 0;
+}
+
+-----------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char **argv){
+  if(argc>2){
+    int wynik = 0;
+    printf("%d oraz %s\n", argc, argv[1]);
+    for(int i=1; i<argc-1; i++){
+      wynik+=atoi(argv[i]);
+      printf("%s+", argv[i]);
+    }
+    wynik+=atoi(argv[argc-1]);
+    printf("%s=", argv[argc-1]);
+
+  /*for(int i=1; i<argc; i++){
+    wynik = wynik + argv[i];
+    printf("\ninfo: %d\n", wynik);
+  }*/
+    printf("%d\n", wynik);
+  }
+  else {
+    printf("Program przyjął za mało argumentów! (%d)\n", argc);
+
+  }
+  return 0;
+}
+
+-----------
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+// -lm
+// pamiętaj o gcc lab.c -o lab -lm
+int main(int argc, char **argv){
+  if(atoi(argv[2])>0){
+    double wynik;
+    if(argc==3){
+      printf("potęga: %lf, liczba: %d\n", atof(argv[1]), atoi(argv[2]));
+      int potega = atoi(argv[2]);
+      double liczba = atof(argv[1]);
+      wynik = pow(liczba, potega);
+      printf("%lf^%d=%lf\n", atof(argv[1]), atoi(argv[2]), wynik);
+    } else{
+      printf("niepoprawna ilość danych (%d)\n", argc-1);
+    }
+  } else {
+  printf("potęga mniejsza niż zero\n");
+  }
+  return 0;
+}
+
+-----------
+#include <stdio.h>
+#define MAX_LEN 100
+
+typedef struct Towar{
+  char nazwa[MAX_LEN];
+  double cenaBrutto;
+  float stawkaVAT;
+}Towar;
+
+void show(const Towar *towar);
+double cenaNetto(const Towar *towar);
+double kwotaVAT(const Towar *towar);
+Towar make_Towar(const char *nazwa, double cenaBrutto, float stawkaVAT);
+Towar makeTowar(const Towar *towar);
+
+int main(void){
+  Towar a={"Wiertarka",123.00,0.23};
+  Towar b={"Młot pneumatyczny", 340.00, 0.24};
+  printf("%s %.2lf \n", a.nazwa, a.cenaBrutto);
+  show(&a);
+  show(&b);
+  printf("cena Netto towaru %s wynosi %.2lf\n", a.nazwa, cenaNetto(&a));
+  printf("kwota VAT towaru %s wynosi %.2lf\n", a.nazwa, kwotaVAT(&a));
+  Towar c;
+  c=make_Towar("Pilarka kątowa", 219.59, 0.23);
+  show(&c);
+  Towar d;
+  d=makeTowar(&c);
+  show(&d);
+  return 0;
+}
+
+Towar make_Towar(const char *nazwa, double cenaBrutto, float stawkaVAT){
+  Towar wynik;
+  int i = 0;
+  while(nazwa[i] != '\0' && i<MAX_LEN-1 ){wynik.nazwa[i]=nazwa[i], i++; }
+  wynik.nazwa[i] = '\0';
+  wynik.cenaBrutto = cenaBrutto;
+  wynik.stawkaVAT = stawkaVAT;
+  return wynik;
+}
+
+Towar makeTowar(const Towar *towar){
+  Towar kopia;
+  int i = 0;
+  while(towar->nazwa[i] != '\0'){kopia.nazwa[i]=towar->nazwa[i], i++;}
+  kopia.nazwa[i]='\0';
+  kopia.cenaBrutto = towar->cenaBrutto;
+  kopia.stawkaVAT = towar->stawkaVAT;
+  return kopia;
+}
+
+void show(const Towar *towar){
+  printf("Nazwa: %s, cena brutto: %.2lf, stawka VAT:%.2lf\n", towar->nazwa, towar->cenaBrutto, towar->stawkaVAT);
+  // Dwa rodzaje wypisania towar->nazwa lub (*towar).nazwa //
+  // printf("2.Nazwa: %s, cena brutto: %.2lf, stawka VAT:%.2lf\n", (*towar).nazwa, (*towar).cenaBrutto, (*towar).stawkaVAT);
+}
+
+double cenaNetto(const Towar *towar){
+  return(towar->cenaBrutto) / (1.0+ towar->stawkaVAT);
+}
+
+double kwotaVAT(const Towar *towar){
+  return towar->cenaBrutto - cenaNetto(towar);
+}
+
+-----------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+  char *tablica = calloc(10, sizeof(char));
+  for (int i=0; i<8; i++) *(tablica+i)=100;
+  fgets(tablica, 5, stdin);
+  printf("\n");
+  for(int i=0;i<10;i++){
+    printf("znak: %c kod: %d \n", *(tablica+i), tablica[i]);
+  }
+  free(tablica);
+  return 0;
+}
+
+-----------
+-----------
+-----------
