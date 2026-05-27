@@ -4,12 +4,12 @@ int main(void)
 {
 // zad 1
 // a)
-printf("Dominik Kraszewski\n");
+printf("Albert Ein\n");
 // b)
-printf("Dominik \nKraszewski\n");
+printf("Alber Zwei\n");
 // c)
-printf("Dominik ");
-printf("Kraszewski\n");
+printf("Albe ");
+printf("Drei\n");
 return 0;
 }
 
