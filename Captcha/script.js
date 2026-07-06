@@ -3,7 +3,7 @@ const triesText = document.getElementById("tries");
 
 let tries = 3;
 
-// 🔥 przykładowe dane captcha
+// 🔥 dane captcha
 const options = [
   "*a*",
   "!b!",
@@ -13,44 +13,66 @@ const options = [
   "*f*"
 ];
 
-// poprawne odpowiedzi (gwiazdki)
+// poprawne odpowiedzi
 const correct = new Set(["*a*", "*c*", "*d*", "*f*"]);
 
+// stan logiczny (TO jest prawda systemu)
 const selected = new Set();
 
-// generowanie przycisków
-options.forEach(text => {
+// 🔥 generowanie przycisków
+options.forEach((text) => {
   const btn = document.createElement("button");
   btn.className = "captcha-btn";
   btn.innerText = text;
 
+  // ID logiczne (nie UI)
+  btn.dataset.id = text;
+
   btn.addEventListener("click", (e) => {
     console.log("isTrusted:", e.isTrusted);
 
-    // TEST: możesz zobaczyć różnicę
+    // ❌ BOT CLICK - tylko efekt wizualny (ZERO logiki)
     if (!e.isTrusted) {
-      console.warn("FAKE CLICK (bot / script)");
+      console.warn("Fake click (ignored in logic)");
+      btn.classList.toggle("pressed"); // opcjonalnie tylko wizual
+      return;
     }
 
-    if (selected.has(text)) {
-      selected.delete(text);
-      btn.classList.remove("selected");
-    } else {
-      selected.add(text);
-      btn.classList.add("selected");
-    }
+    // ✅ REAL CLICK - zmiana stanu logicznego
+    toggleSelection(text);
+
+    // UI sync z logiką
+    syncButtonUI(btn, text);
   });
 
   container.appendChild(btn);
 });
 
-// confirm
+// 🔧 zmiana stanu
+function toggleSelection(id) {
+  if (selected.has(id)) {
+    selected.delete(id);
+  } else {
+    selected.add(id);
+  }
+}
+
+// 🎨 UI sync (jedno źródło prawdy = selected)
+function syncButtonUI(btn, id) {
+  if (selected.has(id)) {
+    btn.classList.add("selected");
+  } else {
+    btn.classList.remove("selected");
+  }
+}
+
+// 🔥 confirm
 document.getElementById("confirmBtn").addEventListener("click", (e) => {
 
   console.log("confirm isTrusted:", e.isTrusted);
 
   if (!e.isTrusted) {
-    alert("Nielegalny klik (bot?)");
+    alert("Nielegalna próba (bot click)");
     return;
   }
 
@@ -73,12 +95,7 @@ document.getElementById("confirmBtn").addEventListener("click", (e) => {
 
     if (tries <= 0) {
       alert("Zablokowano");
+      container.querySelectorAll("button").forEach(b => b.disabled = true);
     }
   }
-});
-
-button.addEventListener("click", (e) => {
-    if (!e.isTrusted) return;
-
-    button.classList.toggle("pressed");
 });
