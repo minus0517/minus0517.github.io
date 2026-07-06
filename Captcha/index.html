@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Captcha Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="c-window captcha-window">
+
+  <div class="header">
+    <div class="text">Zagadka</div>
+  </div>
+
+  <div class="content">
+
+    <div class="captcha">
+
+      <div class="captcha__question">
+        Powodzenia! Zaznacz odpowiedzi zawierające gwiazdkę.
+      </div>
+
+      <div class="captcha__image">
+        <div class="fake-image">OBRAZ CAPTCHA</div>
+      </div>
+
+      <div class="captcha__buttons" id="buttons"></div>
+
+      <div class="captcha__confirm">
+        <button id="confirmBtn">Potwierdzam</button>
+      </div>
+
+      <div class="captcha__triesleft" id="tries">
+        Liczba prób: 3
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

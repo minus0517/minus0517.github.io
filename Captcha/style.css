@@ -1,0 +1,66 @@
+body {
+  background: #1e1e1e;
+  color: white;
+  font-family: Arial;
+}
+
+.c-window {
+  width: 500px;
+  margin: 50px auto;
+  background: #2a2a2a;
+  border: 2px solid #444;
+  padding: 10px;
+}
+
+.header .text {
+  font-weight: bold;
+  padding: 5px;
+  background: #333;
+  text-align: center;
+}
+
+.fake-image {
+  height: 120px;
+  background: #111;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.captcha__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.captcha-btn {
+  padding: 10px;
+  background: green;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.captcha-btn.selected {
+  background: orange;
+}
+
+.captcha__confirm button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.button {
+    background: #4CAF50;
+    color: white;
+    transition: 0.2s;
+}
+
+.button.pressed {
+    background: #ff9800;
+    border: 2px solid yellow;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px gold;
+}
