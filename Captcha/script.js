@@ -72,7 +72,7 @@ document.getElementById("confirmBtn").addEventListener("click", (e) => {
   console.log("confirm isTrusted:", e.isTrusted);
 
   if (!e.isTrusted) {
-    alert("Nielegalna próba (bot click)");
+    alert("Nielegalna próba nie pozwalam");
     return;
   }
 
